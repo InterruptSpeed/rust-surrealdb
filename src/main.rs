@@ -22,7 +22,7 @@ async fn main() -> Result<()> {
     let sql = "SELECT * from task";
     let ress = ds.execute(sql, &ses, None, false).await?;
     for object in into_iter_object(ress)? {
-        println!("record {:?}", object?.get("id"));
+        println!("record {}", object?);
     }
 
     Ok(())
