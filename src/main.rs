@@ -1,5 +1,6 @@
 #![allow(unused)] // only while exploring; remove for prod
 use anyhow::{anyhow, Result};
+use chrono;
 use std::collections::BTreeMap;
 use surrealdb::sql::{thing, Datetime, Object, Thing, Value};
 use surrealdb::{Datastore, Response, Session};
@@ -10,6 +11,7 @@ type DB = (Datastore, Session);
 async fn main() -> Result<()> {
     let db = &(
         Datastore::new("memory").await?,
+        //Datastore::new("file://tutorial.db").await?,
         Session::for_db("my_ns", "my_db"),
     );
     let (ds, ses) = db;
@@ -23,6 +25,7 @@ async fn main() -> Result<()> {
     let data: BTreeMap<String, Value> = [
         ("title".into(), "Task 02 UPDATED".into()),
         ("done".into(), true.into()),
+        ("updated_utc".into(), chrono::offset::Utc::now().into()),
     ]
     .into();
     let vars: BTreeMap<String, Value> = [
@@ -53,6 +56,7 @@ async fn create_task((ds, ses): &DB, title: &str, priority: i32) -> Result<(Stri
     let data: BTreeMap<String, Value> = [
         ("title".into(), title.into()),
         ("priority".into(), priority.into()),
+        ("created_utc".into(), chrono::offset::Utc::now().into()),
     ]
     .into();
     let vars: BTreeMap<String, Value> = [("data".into(), data.into())].into();

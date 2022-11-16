@@ -17,4 +17,14 @@ cargo add anyhow surrealdb
 cargo watch -q -c -x "run -q"
 ```
 
-in VS Code enable fmt on save in Settings->Editor
+## extras
+
+- in VS Code enable fmt on save in Settings->Editor
+- consider the ThunderClient extension for VSCode
+
+## surrealdb on macos w/ homebrew
+
+```
+brew install surrealdb/tap/surreal
+surreal start --user root --pass root --log debug memory
+```
