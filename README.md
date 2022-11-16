@@ -2,6 +2,8 @@
 
 follow-along of [SurrealDB - Rust Embedded Database - Quick Tutorial](https://www.youtube.com/watch?v=iOyvum0D3LM) by [Jeremy Chone](https://www.youtube.com/c/JeremyChone)
 
+![build and test workflow](https://github.com/InterruptSpeed/rust-surrealdb/actions/workflows/main.yml/badge.svg)
+
 ## config
 
 ```
