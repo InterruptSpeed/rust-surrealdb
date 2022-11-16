@@ -4,7 +4,7 @@ follow-along of [SurrealDB - Rust Embedded Database - Quick Tutorial](https://ww
 
 ## code status
 
-![CI](https://github.com/InterruptSpeed/rust-surrealdb/actions/workflows/main.yml/badge.svg)
+[![CI](https://github.com/InterruptSpeed/rust-surrealdb/actions/workflows/main.yml/badge.svg)](https://github.com/InterruptSpeed/rust-surrealdb/actions/workflows/main.yml)
 
 ## config
 
